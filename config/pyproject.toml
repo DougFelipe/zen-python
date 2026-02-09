@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zen-python"
+version = "1.0.0"
+description = "Repositório educativo sobre o Zen of Python e otimização de código"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "D.F.l. SILVA", email = "dougbti2022@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.7"
+
+[project.urls]
+"Homepage" = "https://github.com/DougFelipe/zen-python"
+"Bug Reports" = "https://github.com/DougFelipe/zen-python/issues"
+"Source" = "https://github.com/DougFelipe/zen-python"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "flake8",
+    "pytest",
+    "mypy",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["zen_python*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.md", "*.txt", "*.py"]
+
+# Configuração para ferramentas de desenvolvimento
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | build
+  | dist
+)/
+'''
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "venv",
+]
