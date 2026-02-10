@@ -1,0 +1,35 @@
+site_name: Zen Python
+site_description: Repositorio educativo sobre Zen of Python e otimizacao de codigo.
+site_url: https://dougfelipe.github.io/zen-python/
+repo_url: https://github.com/DougFelipe/zen-python
+repo_name: DougFelipe/zen-python
+docs_dir: docs
+site_dir: site
+use_directory_urls: true
+
+theme:
+  name: material
+  language: pt-BR
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+
+nav:
+  - Inicio: index.md
+  - Zen of Python:
+      - Teoria: zen/teoria.md
+      - Pratica Parte 1: zen/pratica_parte1.md
+      - Pratica Parte 2: zen/pratica_parte2.md
+  - Otimizacao:
+      - Guia Completo: otimizacao/guia_completo.md
+      - Referencia Rapida: otimizacao/referencia_rapida.md
+  - Projeto:
+      - Contribuindo: CONTRIBUTING.md
+      - Changelog: CHANGELOG.md

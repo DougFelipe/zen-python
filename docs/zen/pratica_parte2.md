@@ -1,18 +1,18 @@
-# O Zen of Python - Exemplos Práticos (Parte 2)
+﻿# O Zen of Python - Exemplos Práticos (Parte 2)
 
-> **Navegação:** [← Voltar ao README](../../README.md) | [← Teoria](teoria.md) | [← Parte 1](pratica_parte1.md) | [Otimização →](../otimizacao/guia_completo.md)
+> **Navegação:** [← Voltar ao Início](../index.md) | [← Teoria](teoria.md) | [← Parte 1](pratica_parte1.md) | [Otimização →](../otimizacao/guia_completo.md)
 
 ## Índice Rápido
 
 **Neste documento (13-19):**
 
-13. [There should be one obvious way to do it](#13-there-should-be-one---and-preferably-only-one---obvious-way-to-do-it)
+13. [There should be one obvious way to do it](#13-there-should-be-one-and-preferably-only-one-obvious-way-to-do-it)
 14. [Although that way may not be obvious at first](#14-although-that-way-may-not-be-obvious-at-first-unless-youre-dutch)
 15. [Now is better than never](#15-now-is-better-than-never)
 16. [Although never is often better than right now](#16-although-never-is-often-better-than-right-now)
 17. [If the implementation is hard to explain](#17-if-the-implementation-is-hard-to-explain-its-a-bad-idea)
 18. [If the implementation is easy to explain](#18-if-the-implementation-is-easy-to-explain-it-may-be-a-good-idea)
-19. [Namespaces are one honking great idea](#19-namespaces-are-one-honking-great-idea----lets-do-more-of-those)
+19. [Namespaces are one honking great idea](#19-namespaces-are-one-honking-great-idea-lets-do-more-of-those)
 
 **Na Parte 1:** [← Princípios 1-12](pratica_parte1.md)
 
@@ -1377,4 +1377,5 @@ Com o tempo, esses princípios se tornam **intuição natural**, e você escreve
 - [← Aprofundar na Teoria](teoria.md)
 - [→ Aplicar em Otimização de Código](../otimizacao/guia_completo.md)
 - [→ Referência Rápida de Otimização](../otimizacao/referencia_rapida.md)
-- [→ Executar Exemplos Práticos](../../src/zen_python_exemplos.py)
+- [→ Executar Exemplos Práticos](https://github.com/DougFelipe/zen-python/blob/main/src/zen_python_exemplos.py)
+

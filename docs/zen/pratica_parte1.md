@@ -1,10 +1,11 @@
 # O Zen of Python - Exemplos Práticos (Parte 1)
 
-> **Navegação:** [← Voltar ao README](../../README.md) | [← Teoria](teoria.md) | [Parte 2 →](pratica_parte2.md) | [Otimização →](../otimizacao/guia_completo.md)
+> **Navegação:** [← Voltar ao Início](../index.md) | [← Teoria](teoria.md) | [Parte 2 →](pratica_parte2.md) | [Otimização →](../otimizacao/guia_completo.md)
 
 ## Índice Rápido
 
 **Neste documento (1-12):**
+
 1. [Beautiful is better than ugly](#1-beautiful-is-better-than-ugly)
 2. [Explicit is better than implicit](#2-explicit-is-better-than-implicit)
 3. [Simple is better than complex](#3-simple-is-better-than-complex)
@@ -66,6 +67,7 @@ doubled_evens = [number * 2 for number in data if number % 2 == 0]
 ```
 
 **Princípios aplicados:**
+
 - Nomes descritivos
 - Formatação consistente (PEP 8)
 - Espaçamento adequado
@@ -430,6 +432,7 @@ result = processor.process_order(my_order)
 ```
 
 **Diferença chave:**
+
 - **Complicado**: Tudo misturado, difícil seguir
 - **Complexo**: Múltiplas partes, cada uma clara, organização lógica
 
@@ -1407,3 +1410,4 @@ def add_flexible(a: Union[int, float], b: Union[int, float]) -> Union[int, float
 ---
 
 > **Continua:** [Parte 2 - Princípios 13-19 →](pratica_parte2.md)
+

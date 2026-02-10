@@ -1,15 +1,15 @@
 # Guia Completo: Otimização de Código Python
 
-> **Navegação:** [← Voltar ao README](../../README.md) | [Referência Rápida →](referencia_rapida.md) | [Zen do Python →](../zen/teoria.md)
+> **Navegação:** [← Voltar ao Início](../index.md) | [Referência Rápida →](referencia_rapida.md) | [Zen do Python →](../zen/teoria.md)
 
 ## Sumário
-1. [Operações com Listas](#1-operações-com-listas)
-2. [Busca e Verificação de Elementos](#2-busca-e-verificação-de-elementos)
-3. [Itertools para Iterações Complexas](#3-itertools-para-iterações-complexas)
-4. [Operações de Conjunto (Sets)](#4-operações-de-conjunto-sets)
+1. [Operações com Listas](#1-operacoes-com-listas)
+2. [Busca e Verificação de Elementos](#2-busca-e-verificacao-de-elementos)
+3. [Itertools para Iterações Complexas](#3-itertools-para-iteracoes-complexas)
+4. [Operações de Conjunto (Sets)](#4-operacoes-de-conjunto-sets)
 5. [Strings e Joins](#5-strings-e-joins)
 6. [Comprehensions vs Loops](#6-comprehensions-vs-loops)
-7. [Funções Built-in para Agregação](#7-funções-built-in-para-agregação)
+7. [Funções Built-in para Agregação](#7-funcoes-built-in-para-agregacao)
 8. [Casos Especiais e Trade-offs](#8-casos-especiais-e-trade-offs)
 
 ---
@@ -30,11 +30,13 @@ resultado = [i ** 2 for i in range(1000)]
 ```
 
 **Por quê é melhor?**
+
 - List comprehension é otimizada em C no CPython
 - Reduz overhead de chamadas de método `.append()`
 - ~30% mais rápido em média
 
 **Trade-offs:**
+
 - Menos legível para operações muito complexas
 - Consome memória de uma vez (considere generator expressions para grandes volumes)
 
@@ -67,6 +69,7 @@ resultado = list(chain(lista1, lista2))
 ```
 
 **Trade-offs:**
+
 - `extend`: modifica in-place, mais eficiente em memória
 - `+`: cria nova lista, mais funcional
 - `chain`: melhor para iteração única sem materializar a lista
@@ -99,10 +102,12 @@ if 'valor' in meu_set:
 ```
 
 **Complexidade:**
+
 - Lista: O(n) - precisa percorrer potencialmente todos elementos
 - Set: O(1) - acesso direto via hash
 
 **Trade-offs:**
+
 - Set consome mais memória (~3x mais que lista)
 - Set não mantém ordem (use dict se ordem importa, Python 3.7+)
 - Conversão inicial tem custo O(n)
@@ -129,6 +134,7 @@ unicos = list(dict.fromkeys(lista))
 ```
 
 **Performance:**
+
 - Loop com `in`: O(n²)
 - Set: O(n)
 
@@ -154,6 +160,7 @@ resultado = list(product(lista1, lista2, lista3))
 ```
 
 **Vantagens:**
+
 - Código mais limpo e declarativo
 - Implementação otimizada em C
 - Lazy evaluation (não consome memória até necessário)
@@ -191,6 +198,7 @@ for item in lista:
 ```
 
 **Trade-offs:**
+
 - `groupby`: requer ordenação prévia, mais eficiente para dados já ordenados
 - `defaultdict`: não requer ordenação, mais intuitivo
 
@@ -252,6 +260,7 @@ diff_sim = list(set(lista1) ^ set(lista2))
 **Performance:** O(n + m) vs O(n × m) dos loops
 
 **Operadores de Set:**
+
 - `&` ou `.intersection()`: elementos em ambos
 - `|` ou `.union()`: elementos em qualquer um
 - `-` ou `.difference()`: elementos no primeiro mas não no segundo
@@ -290,6 +299,7 @@ for palavra in lista_palavras:
 ```
 
 **Por que é ruim?**
+
 - Strings são imutáveis em Python
 - Cada concatenação cria uma nova string
 - Complexidade O(n²) devido a cópias repetidas
@@ -381,6 +391,7 @@ for quad in quadrados:
 ```
 
 **Trade-offs:**
+
 - Generator: memória constante O(1), não pode ser reusado
 - List: memória O(n), pode iterar múltiplas vezes
 
@@ -473,6 +484,7 @@ produto = reduce(mul, numeros, 1)
 ```
 
 **Quando usar cada um:**
+
 - **List comprehension**: default choice, mais pythônico
 - **Map**: quando aplicar função existente complexa
 - **Filter**: quando a condição é uma função nomeada complexa
@@ -633,37 +645,42 @@ resultado = [y for x in dados if (y := calcular(x)) > 10]
 
 ## Princípios Gerais de Otimização
 
-1. **Use estruturas de dados adequadas:**
-   - Busca/verificação frequente → Set/Dict
-   - Ordem importa → List/Deque
-   - Contagem → Counter
-   - Agrupamento → defaultdict
+### 1. Use estruturas de dados adequadas
 
-2. **Prefira built-ins e stdlib:**
-   - Implementados em C, altamente otimizados
-   - Bem testados e mantidos
+- Busca/verificação frequente → Set/Dict
+- Ordem importa → List/Deque
+- Contagem → Counter
+- Agrupamento → defaultdict
 
-3. **Evite trabalho desnecessário:**
-   - Use lazy evaluation (generators) quando possível
-   - Avaliação em curto-circuito com `any()`/`all()`
-   - Cache resultados quando apropriado
+### 2. Prefira built-ins e stdlib
 
-4. **Legibilidade vs Performance:**
-   - Para <1000 elementos, prefira código legível
-   - Otimize apenas gargalos identificados (profile primeiro!)
-   - Use comprehensions quando melhoram legibilidade
+- Implementados em C, altamente otimizados
+- Bem testados e mantidos
 
-5. **Medição:**
-   ```python
-   import timeit
-   
-   # Medir tempo
-   tempo = timeit.timeit('sum(range(100))', number=10000)
-   
-   # Comparar alternativas
-   print(timeit.timeit('[x**2 for x in range(100)]', number=10000))
-   print(timeit.timeit('list(map(lambda x: x**2, range(100)))', number=10000))
-   ```
+### 3. Evite trabalho desnecessário
+
+- Use lazy evaluation (generators) quando possível
+- Avaliação em curto-circuito com `any()`/`all()`
+- Cache resultados quando apropriado
+
+### 4. Legibilidade vs Performance
+
+- Para <1000 elementos, prefira código legível
+- Otimize apenas gargalos identificados (profile primeiro!)
+- Use comprehensions quando melhoram legibilidade
+
+### 5. Medição
+
+```python
+import timeit
+
+# Medir tempo
+tempo = timeit.timeit('sum(range(100))', number=10000)
+
+# Comparar alternativas
+print(timeit.timeit('[x**2 for x in range(100)]', number=10000))
+print(timeit.timeit('list(map(lambda x: x**2, range(100)))', number=10000))
+```
 
 ---
 
@@ -712,6 +729,7 @@ Lembre-se: **meça antes de otimizar!** A legibilidade e manutenibilidade do có
 ## Próximos Passos
 
 - [→ Referência Rápida (Cheat Sheet)](referencia_rapida.md)
-- [→ Executar Benchmarks](../../src/exemplos_otimizacao.py)
+- [→ Executar Benchmarks](https://github.com/DougFelipe/zen-python/blob/main/src/exemplos_otimizacao.py)
 - [← Aprender Zen do Python (Teoria)](../zen/teoria.md)
 - [← Exemplos Práticos do Zen](../zen/pratica_parte1.md)
+

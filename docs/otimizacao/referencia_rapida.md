@@ -1,6 +1,6 @@
-# 🚀 Guia de Referência Rápida - Otimização Python
+﻿# 🚀 Guia de Referência Rápida - Otimização Python
 
-> **Navegação:** [← Voltar ao README](../../README.md) | [← Guia Completo](guia_completo.md) | [Zen do Python →](../zen/teoria.md)
+> **Navegação:** [← Voltar ao Início](../index.md) | [← Guia Completo](guia_completo.md) | [Zen do Python →](../zen/teoria.md)
 
 ## 📋 Cheat Sheet de Substituições
 
@@ -360,6 +360,7 @@ if not minha_lista:  # Verificação de vazio
 ## 📚 Documentos Relacionados
 
 - [← Guia Completo de Otimização](guia_completo.md) - Explicações detalhadas com exemplos
-- [→ Executar Benchmarks](../../src/exemplos_otimizacao.py) - Código executável com métricas
+- [→ Executar Benchmarks](https://github.com/DougFelipe/zen-python/blob/main/src/exemplos_otimizacao.py) - Código executável com métricas
 - [→ Zen do Python (Teoria)](../zen/teoria.md) - Filosofia por trás das boas práticas
 - [→ Zen do Python (Prática)](../zen/pratica_parte1.md) - Exemplos práticos dos princípios
+

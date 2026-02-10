@@ -1,4 +1,4 @@
-#  Zen Python - Repositório Educativo Completo
+#  Zen Python - Repositório Educativo
 
 ![Python](https://img.shields.io/badge/python-3.7+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
@@ -90,6 +90,26 @@ Referências rápidas para o dia a dia:
 </td>
 </tr>
 </table>
+
+## 📖 Guias de Estudo
+
+### Trilha Zen of Python
+
+1. [Teoria Completa](docs/zen/teoria.md)
+2. [Prática Parte 1](docs/zen/pratica_parte1.md)
+3. [Prática Parte 2](docs/zen/pratica_parte2.md)
+
+### Trilha de Otimização
+
+1. [Guia Completo](docs/otimizacao/guia_completo.md)
+2. [Referência Rápida](docs/otimizacao/referencia_rapida.md)
+
+## 💻 Exemplos Executáveis
+
+- [Zen of Python - exemplos práticos](src/zen_python_exemplos.py)
+- [Benchmarks de otimização](src/exemplos_otimizacao.py)
+- [Demo rápida](src/demo_rapido.py)
+- [Validação de ambiente](src/setup_check.py)
 
 ## 🚀 Como Usar
 

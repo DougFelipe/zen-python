@@ -1,17 +1,17 @@
-# 🤝 Contribuindo para o Zen Python
+﻿# 🤝 Contribuindo para o Zen Python
 
-> **Navegação:** [← Voltar ao README](../README.md) | [Changelog →](CHANGELOG.md)
+> **Navegação:** [← Voltar ao Início](index.md) | [Changelog →](CHANGELOG.md)
 
 Obrigado por considerar contribuir para o projeto **Zen Python**! Este é um projeto educativo que busca ensinar os princípios fundamentais do Python e técnicas de otimização.
 
 ## 📋 Índice
 
-- [Tipos de Contribuição](#-tipos-de-contribuição)
-- [Como Começar](#-como-começar)
-- [Diretrizes de Código](#-diretrizes-de-código)
-- [Enviando uma Contribuição](#-enviando-uma-contribuição)
-- [Reportando Bugs](#-reportando-bugs)
-- [Solicitando Features](#-solicitando-features)
+- [Tipos de Contribuição](#tipos-de-contribuicao)
+- [Como Começar](#como-comecar)
+- [Diretrizes de Código](#diretrizes-de-codigo)
+- [Enviando uma Contribuição](#enviando-uma-contribuicao)
+- [Reportando Bugs](#reportando-bugs)
+- [Solicitando Features](#solicitando-features)
 
 ## 🎯 Tipos de Contribuição
 
@@ -279,3 +279,4 @@ Contribuidores serão reconhecidos:
 
 - **Issues**: Para bugs e feature requests
 - **Discussions**: Para perguntas gerais
+
