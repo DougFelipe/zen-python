@@ -19,6 +19,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PAGES_ADMIN_TOKEN: ${{ secrets.PAGES_ADMIN_TOKEN }}
 
     steps:
       - name: Checkout
@@ -51,10 +53,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Force Pages Build Type (workflow)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.PAGES_ADMIN_TOKEN != ''
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.PAGES_ADMIN_TOKEN != ''
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.PAGES_ADMIN_TOKEN }}
+          github-token: ${{ env.PAGES_ADMIN_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
@@ -71,7 +73,7 @@ jobs:
             }
 
       - name: Pages Build Type Notice
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.PAGES_ADMIN_TOKEN == ''
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && env.PAGES_ADMIN_TOKEN == ''
         run: |
           echo "PAGES_ADMIN_TOKEN não configurado."
           echo "Se o Pages estiver em modo branch, ajuste manualmente em Settings > Pages > Source: GitHub Actions."
