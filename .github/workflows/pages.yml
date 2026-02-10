@@ -51,8 +51,10 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Force Pages Build Type (workflow)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.PAGES_ADMIN_TOKEN != ''
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.PAGES_ADMIN_TOKEN }}
           script: |
             const owner = context.repo.owner;
             const repo = context.repo.repo;
@@ -62,10 +64,17 @@ jobs:
                 repo,
                 build_type: "workflow",
               });
-              core.info("GitHub Pages build_type definido para 'workflow'.");
+              core.info("GitHub Pages build_type definido para 'workflow' via PAGES_ADMIN_TOKEN.");
             } catch (error) {
-              core.warning(`Não foi possível forçar build_type=workflow automaticamente: ${error.message}`);
+              core.warning(`Falha ao forçar build_type=workflow: ${error.message}`);
+              core.warning("Verifique as permissões do PAGES_ADMIN_TOKEN ou ajuste manual em Settings > Pages > Source = GitHub Actions.");
             }
+
+      - name: Pages Build Type Notice
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && secrets.PAGES_ADMIN_TOKEN == ''
+        run: |
+          echo "PAGES_ADMIN_TOKEN não configurado."
+          echo "Se o Pages estiver em modo branch, ajuste manualmente em Settings > Pages > Source: GitHub Actions."
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
