@@ -134,6 +134,7 @@ dmypy.json
 *.swp
 *.swo
 *~
+.claude
 
 # OS generated files
 .DS_Store
@@ -150,3 +151,15 @@ Thumbs.db
 *.bak
 *.backup
 *~
+
+# LaTeX files
+*.tex
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+*.dvi
+*.ps
+*.eps

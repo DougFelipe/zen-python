@@ -15,6 +15,40 @@ theme:
     - navigation.top
     - content.code.copy
 
+plugins:
+  - search
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: pt
+          default: true
+          name: Português (BR)
+          build: true
+        - locale: en
+          name: English
+          build: true
+          nav_translations:
+            Inicio: Home
+            Zen of Python: Zen of Python
+            Teoria: Theory
+            Pratica Parte 1: Practice Part 1
+            Pratica Parte 2: Practice Part 2
+            Otimizacao: Optimization
+            Guia Completo: Complete Guide
+            Referencia Rapida: Quick Reference
+            Projeto: Project
+            Contribuindo: Contributing
+            Changelog: Changelog
+
+extra:
+  alternate:
+    - name: Português (BR)
+      link: /zen-python/
+      lang: pt
+    - name: English
+      link: /zen-python/en/
+      lang: en
+
 markdown_extensions:
   - admonition
   - tables

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "zen-python"
-version = "1.0.0"
+version = "1.0.0-alpha"
 description = "Repositório educativo sobre o Zen of Python e otimização de código"
 readme = "README.md"
 license = {text = "MIT"}
@@ -12,7 +12,7 @@ authors = [
     {name = "D.F.l. SILVA", email = "dougbti2022@gmail.com"}
 ]
 classifiers = [
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
     "Intended Audience :: Education",
     "License :: OSI Approved :: MIT License",
@@ -44,6 +44,7 @@ dev = [
 docs = [
     "mkdocs>=1.6,<2.0",
     "mkdocs-material>=9.5,<10.0",
+    "mkdocs-static-i18n>=1.2,<2.0",
 ]
 
 [tool.setuptools.packages.find]
